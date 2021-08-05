@@ -1,0 +1,14 @@
+﻿CREATE TABLE Foo (
+	Id int NOT NULL,
+	Name varchar(255),
+	CONSTRAINT PK_Foo PRIMARY KEY(Id)
+)
+
+CREATE TABLE Bar (
+	Id int NOT NULL,
+	FooId int NOT NULL,
+	Description varchar(255),
+	CONSTRAINT PK_Bar PRIMARY KEY(Id),
+	CONSTRAINT FK_Bar_Foo FOREIGN KEY(FooId)
+		REFERENCES Foo(Id)
+)
